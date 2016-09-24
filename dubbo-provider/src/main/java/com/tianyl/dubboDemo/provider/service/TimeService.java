@@ -1,4 +1,4 @@
-package com.tianyl.dubboDemo.service;
+package com.tianyl.dubboDemo.provider.service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
