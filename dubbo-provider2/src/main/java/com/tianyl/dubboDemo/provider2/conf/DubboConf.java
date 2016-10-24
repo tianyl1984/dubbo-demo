@@ -1,8 +1,9 @@
-package com.tianyl.dubboDemo.provider.conf;
+package com.tianyl.dubboDemo.provider2.conf;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.util.StringUtils;
 
 import com.alibaba.dubbo.config.ApplicationConfig;
@@ -11,7 +12,7 @@ import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 
 @Configuration
-// @ImportResource("classpath:dubbo.xml")
+@ImportResource("classpath:dubbo.xml")
 public class DubboConf {
 
 	@Value("${dubbo.application.name}")

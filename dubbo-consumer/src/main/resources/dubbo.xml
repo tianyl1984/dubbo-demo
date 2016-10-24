@@ -8,8 +8,10 @@
     http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
  	
  	<dubbo:application name="consumer-of-demo"  />
- 	<dubbo:registry address="zookeeper://192.168.0.104:2181" />
+	<!-- 注册服务地址 -->
+	<dubbo:registry address="${dubbo.registry.address}" group="${dubbo.registry.group}"/>
  	
- 	<dubbo:reference id="timeService" interface="com.tianyl.dubboDemo.api.ITimeService"/>
+ 	<dubbo:reference id="timeService" interface="com.tianyl.dubboDemo.api.ITimeService" version="1.0" check="false" retries="0" timeout="99999999"/>
+ 	<dubbo:reference id="callTimeService" interface="com.tianyl.dubboDemo.api.ICallTimeService" version="1.0" check="false" retries="0" async="true" timeout="99999999"/>
  	
 </beans>
