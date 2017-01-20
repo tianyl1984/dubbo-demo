@@ -9,7 +9,6 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.annotation.AnnotationUtils;
-import org.springframework.stereotype.Component;
 
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
@@ -22,7 +21,7 @@ import com.alibaba.dubbo.config.ServiceConfig;
  * @author tianyale 2016年7月26日
  *
  */
-@Component
+// @Component
 public class DubboServiceExportProcessor implements BeanPostProcessor, ApplicationContextAware {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());

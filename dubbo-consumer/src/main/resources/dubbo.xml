@@ -10,8 +10,10 @@
  	<dubbo:application name="consumer-of-demo"  />
 	<!-- 注册服务地址 -->
 	<dubbo:registry address="${dubbo.registry.address}" group="${dubbo.registry.group}"/>
+ 	<dubbo:monitor protocol="registry"/>
  	
- 	<dubbo:reference id="timeService" interface="com.tianyl.dubboDemo.api.ITimeService" version="1.0" check="false" retries="0" timeout="99999999"/>
- 	<dubbo:reference id="callTimeService" interface="com.tianyl.dubboDemo.api.ICallTimeService" version="1.0" check="false" retries="0" async="true" timeout="99999999"/>
+ 	<dubbo:reference id="timeService" interface="com.tianyl.dubboDemo.api.ITimeService" check="false" retries="0" timeout="99999999"/>
+ 	<dubbo:reference id="callTimeService" interface="com.tianyl.dubboDemo.api.ICallTimeService" check="false" retries="0" async="true" timeout="99999999"/>
+ 	<dubbo:reference id="callbackDemoService" interface="com.tianyl.dubboDemo.api.ICallbackDemoService" check="false" retries="0" timeout="99999999"/>
  	
 </beans>

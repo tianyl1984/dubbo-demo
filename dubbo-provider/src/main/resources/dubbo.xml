@@ -7,10 +7,15 @@
     http://code.alibabatech.com/schema/dubbo        
     http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
  
- 	<dubbo:application name="demo" />
- 	<dubbo:registry address="zookeeper://192.168.0.104:2181" />
+<!--  	<dubbo:application name="demo" /> -->
+<!--  	<dubbo:registry address="zookeeper://172.16.53.244:2181" /> -->
+<!--  	<dubbo:protocol name="dubbo" port="20880"/> -->
  
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="com.tianyl.dubboDemo.api.ITimeService" ref="timeService"/>
- 
+    <dubbo:service interface="com.tianyl.dubboDemo.api.ICallbackDemoService" ref="callbackDemoService" protocol="dubbo">
+ 		<dubbo:method name="call">
+ 			<dubbo:argument index="1" callback="true" type="com.tianyl.dubboDemo.api.CallbackListener" />
+ 		</dubbo:method>
+ 	</dubbo:service>
 </beans>
